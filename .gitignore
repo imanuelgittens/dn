@@ -1,0 +1,11 @@
+#ignore webstorm workspace
+.idea
+
+# ignore sublime workspace
+*.sublime-workspace
+
+#ignore node_modules folder
+node_modules
+
+#ignore all sass cache files
+.sass-cache

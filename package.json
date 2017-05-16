@@ -1,0 +1,25 @@
+{
+  "name": "developernews",
+  "version": "1.0.0",
+  "description": "Web app covering Frontend Developer News, Backend Developer News, UI/UX Developer News, and Software Engineering News.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imanuelgittens/dn.git"
+  },
+  "author": "Imanuel Gittens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imanuelgittens/dn/issues"
+  },
+  "homepage": "https://github.com/imanuelgittens/dn#readme",
+  "devDependencies": {
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
