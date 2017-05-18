@@ -25,18 +25,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
-						{
-	            test: /\.scss$/,
-	            use: extractSass.extract({
-	                use: [{
-	                    loader: "css-loader"
-	                }, {
-	                    loader: "sass-loader"
-	                }],
-	                // use style-loader in development
-	                fallback: "style-loader"
-	            })
-		        }
+						
         ]
     },
     plugins: [
@@ -44,10 +33,5 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
-	  ],
-    devServer: {
-        contentBase: __dirname + '/dist',
-        compress: true,
-        port: 8082
-    }
+	  ]
 };
