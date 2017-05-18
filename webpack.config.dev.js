@@ -1,20 +1,18 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 
-module.exports = {
+module.exports = merge(baseConfig, {
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: extractSass.extract({
-                    use: [{
-                        loader: "css-loader"
-                    }, {
-                        loader: "sass-loader"
-                    }],
-                    // use style-loader in development
-                    fallback: "style-loader"
-                })
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
         ]
     },
@@ -23,4 +21,4 @@ module.exports = {
         compress: true,
         port: 9000
     }
-};
+});

@@ -9,6 +9,7 @@ const extractSass = new ExtractTextPlugin({
     filename: "bundle.css"
 });
 
+
 module.exports = {
     entry: './src',                 // entry point
     output: {                       // output folder
@@ -29,7 +30,7 @@ module.exports = {
         ]
     },
     plugins: [
-	    extractSass,
+        extractSass,
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
