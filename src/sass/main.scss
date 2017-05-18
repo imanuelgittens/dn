@@ -8,16 +8,20 @@
 
 // 2. Vendors
 @import
+	'vendor/reset',
   'vendor/normalize';
 
 // 3. Base stuff
 @import
   'base/base',
-  'base/helpers';
+  'base/helpers',
+  'base/typography';
 
 // 4. Layout-related sections
 @import
   'layout/header',
+  'layout/grid',
+  'layout/layout',
   'layout/footer';
 
 // 5. Components

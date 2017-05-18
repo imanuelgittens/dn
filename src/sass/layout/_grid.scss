@@ -1,0 +1,70 @@
+/*****************************************************************************
+                              Grid Config
+******************************************************************************/
+
+
+//Adjust the total number of columns for our grid using this variable.
+$grid-total-columns: 16;
+
+//adjust gutter space using this variable
+$gutter: 1em;
+
+/******************************************************************************
+                              Grid component
+******************************************************************************/
+.grid{
+  //Elements
+  &__row{
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  &__col{
+    flex: 1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  //Modifiers
+  &--gutters{
+    margin-left: -$gutter;
+    > .grid__col{ //give columns gutter space
+      padding-left: $gutter;
+      margin-bottom: $gutter;
+    }
+  }
+}
+
+//Mobile First Responsive Grid
+
+@media screen and (min-width: 500px){
+  .grid{
+    &__row{
+      flex-direction: row; //on larger screens grid is horizontal
+    }
+
+    &--gutters{
+      > .grid__col{ //removes bottom margin on larger screens
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+//Flexbox allows for automatic width adjustment however sometimes we need to specify
+//much columns to use
+
+//create grid column percentages
+
+@for $i from 1 through $grid-total-columns {
+  .col#{$i}-of-#{$grid-total-columns} {
+    flex: 0 0 percentage($i/$grid-total-columns);
+  }
+}
+
+
+
+
